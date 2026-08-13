@@ -1,0 +1,133 @@
+.garden {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.garden::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 50% 36%, transparent 24%, rgba(22, 14, 4, 0.4) 100%),
+    linear-gradient(180deg, rgba(255, 210, 120, 0.1) 0%, transparent 26%, rgba(22, 14, 4, 0.22) 100%);
+  pointer-events: none;
+}
+
+.canopy {
+  transform-box: fill-box;
+  transform-origin: center top;
+  animation: sway 14s ease-in-out infinite;
+}
+
+.far {
+  filter: saturate(0.85);
+}
+
+.garden-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.leaf {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.leaf-a {
+  animation: drift 12s linear infinite;
+}
+
+.leaf-b {
+  animation: drift 15s linear infinite 2.5s;
+}
+
+.leaf-c {
+  animation: drift 13s linear infinite 6s;
+}
+
+.leaf-d {
+  animation: drift 16s linear infinite 9s;
+}
+
+.clouds {
+  animation: cloud-drift 40s linear infinite;
+}
+
+.fly {
+  animation: glow 3.4s ease-in-out infinite;
+}
+
+.fly-b {
+  animation-delay: 0.6s;
+}
+
+.fly-c {
+  animation-delay: 1.4s;
+}
+
+.fly-d {
+  animation-delay: 2.1s;
+}
+
+.fly-e {
+  animation-delay: 2.8s;
+}
+
+@keyframes drift {
+  0% {
+    transform: translate(280px, 70px) rotate(0deg);
+    opacity: 0;
+  }
+  8% {
+    opacity: 0.95;
+  }
+  100% {
+    transform: translate(1320px, 760px) rotate(240deg);
+    opacity: 0.1;
+  }
+}
+
+@keyframes cloud-drift {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(18px);
+  }
+}
+
+@keyframes glow {
+  0%,
+  100% {
+    opacity: 0.15;
+  }
+  50% {
+    opacity: 0.95;
+  }
+}
+
+@keyframes sway {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(0.35deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .leaf-a,
+  .leaf-b,
+  .leaf-c,
+  .leaf-d,
+  .clouds,
+  .fly,
+  .canopy {
+    animation: none;
+  }
+}

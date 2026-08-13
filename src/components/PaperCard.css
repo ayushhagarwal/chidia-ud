@@ -1,0 +1,112 @@
+.sign {
+  position: relative;
+  width: min(300px, calc(100vw - 48px));
+  transform: rotate(-0.8deg);
+  transform-origin: 50% 0%;
+  animation: hang-in 0.62s cubic-bezier(0.22, 1, 0.36, 1);
+  filter: drop-shadow(0 18px 28px rgba(28, 18, 6, 0.38));
+}
+
+.sign--compact {
+  width: min(268px, calc(100vw - 56px));
+}
+
+.sign-inner {
+  position: relative;
+  overflow: hidden;
+  color: var(--ink);
+  padding: 8px 22px 22px;
+  border-radius: 14px;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      transparent 0 9px,
+      rgba(90, 60, 28, 0.04) 9px 10px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      transparent 0 21px,
+      rgba(255, 240, 200, 0.08) 21px 22px
+    ),
+    linear-gradient(165deg, #f7ead0 0%, #ead6b0 46%, #d9c08a 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 248, 230, 0.7),
+    inset 0 -2px 0 rgba(90, 60, 28, 0.12),
+    inset 0 0 0 1px rgba(90, 60, 28, 0.18);
+}
+
+.sign--compact .sign-inner {
+  padding: 4px 18px 16px;
+  border-radius: 12px;
+}
+
+.sign-hang {
+  display: block;
+  width: 78%;
+  height: 22px;
+  margin: 2px auto 6px;
+  overflow: visible;
+}
+
+.sign--compact .sign-hang {
+  width: 72%;
+  height: 18px;
+  margin-bottom: 2px;
+}
+
+.ink-btn {
+  display: block;
+  width: 100%;
+  margin-top: 14px;
+  min-height: 44px;
+  padding: 8px 14px;
+  border: 0;
+  border-radius: 8px;
+  background: #2c2418;
+  color: #f4e6c6;
+  font-family: var(--hand);
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  box-shadow: 0 2px 0 #1a140e;
+}
+
+.ink-btn:hover {
+  background: #3a3022;
+}
+
+.ink-btn:active {
+  transform: translateY(1px);
+  box-shadow: 0 1px 0 #1a140e;
+}
+
+.ink-btn--ghost {
+  margin-top: 8px;
+  min-height: 40px;
+  background: transparent;
+  color: var(--ink);
+  box-shadow: none;
+  border: 1.5px solid rgba(44, 36, 24, 0.45);
+}
+
+.ink-btn--ghost:hover {
+  background: rgba(44, 36, 22, 0.06);
+}
+
+@keyframes hang-in {
+  from {
+    opacity: 0;
+    transform: rotate(-9deg) translateY(-28px);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(-0.8deg) translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sign {
+    animation: none;
+  }
+}

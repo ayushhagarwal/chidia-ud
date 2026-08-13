@@ -1,0 +1,258 @@
+.home-card .title,
+.title {
+  font-family: var(--hand);
+  font-size: clamp(2rem, 6.4vw, 2.55rem);
+  font-weight: 700;
+  line-height: 1.02;
+  margin: 4px 0 10px;
+  letter-spacing: -0.03em;
+}
+
+.title--sm {
+  font-size: clamp(1.55rem, 5.5vw, 1.95rem);
+}
+
+.bird-doodle {
+  display: inline-block;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+
+.bird-doodle svg {
+  width: 30px;
+  height: 18px;
+}
+
+.eyebrow {
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin: 0 0 2px;
+}
+
+.lede {
+  font-family: var(--hand);
+  font-size: 1.08rem;
+  line-height: 1.35;
+  margin: 0 0 6px;
+}
+
+.hint {
+  font-size: 0.82rem;
+  line-height: 1.35;
+  color: var(--ink-soft);
+  margin: 0 0 6px;
+}
+
+.shout {
+  font-family: var(--hand);
+  font-size: clamp(1.45rem, 5.5vw, 1.85rem);
+  font-weight: 700;
+  line-height: 1.15;
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.shout-wrap {
+  position: relative;
+  margin: 2px 0 12px;
+  overflow: hidden;
+}
+
+.play-mark {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.shout--ok {
+  color: #2a5a28;
+}
+
+.shout--bad {
+  color: var(--berry);
+}
+
+.timer {
+  height: 5px;
+  border-radius: 99px;
+  background: rgba(44, 36, 22, 0.12);
+  overflow: hidden;
+}
+
+.timer-fill {
+  height: 100%;
+  width: 100%;
+  border-radius: 99px;
+  background: var(--ink);
+  transform-origin: left center;
+  will-change: transform;
+}
+
+.play-layer {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 11vh 16px 80px;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.play-hud {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.play-caption {
+  margin: 0;
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(244, 230, 198, 0.82);
+  text-shadow: 0 1px 8px rgba(20, 12, 4, 0.45);
+}
+
+.score-chip {
+  position: absolute;
+  top: max(16px, env(safe-area-inset-top));
+  left: max(16px, env(safe-area-inset-left));
+  min-width: 42px;
+  padding: 6px 10px;
+  border-radius: 10px;
+  background: #ead6b0;
+  font-family: var(--hand);
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--ink);
+  text-align: center;
+  box-shadow: 0 8px 18px rgba(28, 18, 6, 0.18);
+  pointer-events: none;
+}
+
+.score-line {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin: 10px 0 4px;
+}
+
+.score-num {
+  font-family: var(--hand);
+  font-size: 2.6rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.score-label {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+}
+
+.result-card .sign-inner {
+  padding-bottom: 20px;
+}
+
+.result-shout {
+  position: relative;
+  display: inline-block;
+  max-width: calc(100% - 72px);
+  font-family: var(--hand);
+  font-size: clamp(1.2rem, 4.8vw, 1.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 6px 0 8px;
+  padding-right: 4px;
+  overflow: hidden;
+}
+
+.out-stamp {
+  position: absolute;
+  top: 36px;
+  right: 16px;
+  width: 64px;
+  height: 64px;
+  display: grid;
+  place-items: center;
+  border: 2px solid var(--berry);
+  border-radius: 50%;
+  background: rgba(122, 40, 56, 0.08);
+  color: var(--berry);
+  font-family: var(--hand);
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  transform: rotate(12deg);
+  pointer-events: none;
+}
+
+.out-stamp span {
+  transform: rotate(-4deg);
+}
+
+.result-note {
+  margin-bottom: 2px;
+}
+
+.result-best {
+  font-family: var(--hand);
+  font-size: 1rem;
+  color: #8a5a12;
+  margin: 0 0 4px;
+}
+
+.result-best::before {
+  content: '★ ';
+}
+
+.ink-x {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.sign--marked {
+  animation: hang-shake 0.42s ease;
+}
+
+@keyframes hang-shake {
+  0%,
+  100% {
+    transform: rotate(-0.8deg);
+  }
+  25% {
+    transform: rotate(-3.4deg);
+  }
+  75% {
+    transform: rotate(1.6deg);
+  }
+}
+
+@media (max-width: 480px) {
+  .play-layer {
+    padding-top: 10vh;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sign--marked {
+    animation: none;
+  }
+}
